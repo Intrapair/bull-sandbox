@@ -6,7 +6,7 @@
   "scripts": {
    "status":"npx ts-node bull-status",
    "produce":"npx ts-node bull-producer",
-   "consumer":"npx ts-node bull-consumer"
+   "consume":"npx ts-node bull-consumer"
   },
   "keywords": [],
   "author": "Adeoye Adefemi Opeoluwa <adefemiadeoye@yahoo.com>",
