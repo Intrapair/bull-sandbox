@@ -25,3 +25,6 @@ import { jobOptions, messagingQueue } from "./bull-config";
     console.log("job added to queue");
 })()
 
+messagingQueue.on("waiting", (job) => {
+    console.log("waiting", job.data);
+})
