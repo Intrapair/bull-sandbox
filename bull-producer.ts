@@ -18,13 +18,13 @@ import { jobOptions, messagingQueue } from "./bull-config";
 
     console.log("in producer");
     const jobName = String(process.env.JOB_NAME)
-    await messagingQueue.add(jobName, data1)
-    await messagingQueue.add(jobName, data2)
-    await messagingQueue.add(jobName, data3)
+    await messagingQueue.add(jobName, data1, )
+    await messagingQueue.add(jobName, data2, )
+    await messagingQueue.add(jobName, data3, )
 
     console.log("job added to queue");
 })()
 
 messagingQueue.on("waiting", (job) => {
-    console.log("waiting", job.data);
+    console.log("waiting", job.data.email);
 })

@@ -18,3 +18,4 @@ const worker = new Worker(queueName, async job => {
 worker.on("completed", (job) => {
     console.log("completed", job.data.email);
 })
+
