@@ -12,7 +12,9 @@ console.log("parsed .env");
 
 const connection = {
     host: String(process.env.REDIS_HOST),
-    port: Number(process.env.REDIS_PORT)
+    port: Number(process.env.REDIS_PORT),
+    password: String(process.env.REDIS_PASSWORD),
+    username: String(process.env.REDIS_USERNAME),
 }
 export const jobOptions = {
     removeOnComplete: true, // remove job if complete
