@@ -10,15 +10,19 @@ import dotenv from "dotenv"
 dotenv.config();
 console.log("parsed .env");
 
-const connection = {
+export const BULLMQ_CONNECTION = {
     host: String(process.env.REDIS_HOST),
-    port: Number(process.env.REDIS_PORT)
+    port: Number(process.env.REDIS_PORT),
+    password: String(process.env.REDIS_PASSWORD),
+    username: String(process.env.REDIS_USERNAME),
 }
+
+
 export const jobOptions = {
     removeOnComplete: true, // remove job if complete
     delay: 60000, // 1 = 60000 min in ms
     attempts: 3 // attempt if job is error retry 3 times
 }
 const queueName = String(process.env.QUEUE_NAME)
-export const messagingQueue = new Queue(queueName, { connection })
+export const messagingQueue = new Queue(queueName, { connection: BULLMQ_CONNECTION })
 
